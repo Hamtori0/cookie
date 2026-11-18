@@ -158,7 +158,7 @@ body {
     font-weight: bold;
     color: #744a4a;
     font-size: 22px; 
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: none;
     font-family: 'DialogueFont', sans-serif;
 }
 
@@ -171,7 +171,7 @@ body {
     color: #744a4a;
     font-size: 23px; 
     line-height: 1.5;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: none;
     font-family: 'DialogueFont', sans-serif;
 }
 
@@ -228,7 +228,7 @@ body {
     font-size: 21px;
     font-weight: bold;
     color: #744a4a;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    text-shadow: none;
     font-family: 'DialogueFont', sans-serif;
     transform: translateY(1px);
 }
@@ -267,7 +267,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: #744a4a;   
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.95), 0 0 2px rgba(255, 255, 255, 1);
+    text-shadow: none;
     font-family: 'DialogueFont', sans-serif;
     white-space: nowrap;
     pointer-events: none; 
@@ -319,7 +319,7 @@ body {
 
     .btn-label {
         font-size: 12px;
-        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+        text-shadow: none;
     }
 
     .small-label {
@@ -330,13 +330,13 @@ body {
     #speaker-name {
         font-size: 13px; 
         top: 22%;
-        left: 20%;
+        left: 18%;
         text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
     /* 📌 모바일 대사 본문: 폰트 크기 10px로 키우고, 그림자 거의 없는 수준으로 연하게 조정 */
     #dialogue-text {
-        font-size: 10px; 
+        font-size: 11px; 
         line-height: 1.35;
         top: 50%;
         left: 10%;
@@ -359,7 +359,7 @@ body {
 
     .stage-title-text {
         font-size: 13px; 
-        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+        text-shadow: none;
     }
 
     .ingredient-list {
@@ -373,7 +373,7 @@ body {
     .ing-label {
         font-size: 11px; 
         left: 62%; 
-        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+        text-shadow: none;
     }
 
     #restart-btn img, #back-btn img {
