@@ -150,6 +150,7 @@ body {
     opacity: 0.85; 
 }
 
+/* 📌 PC 버전 이름표 (기존 유지) */
 #speaker-name {
     position: absolute;
     top: 24%;     
@@ -161,6 +162,7 @@ body {
     font-family: 'DialogueFont', sans-serif;
 }
 
+/* 📌 PC 버전 대사 본문 (기존 유지) */
 #dialogue-text {
     position: absolute;
     top: 52%;     
@@ -296,7 +298,7 @@ body {
 }
 
 /* =========================================
-   📱 [모바일] 850px 이하 화면 고정 세팅
+   📱 [모바일] 850px 이하 화면 전용 세팅
    ========================================= */
 @media screen and (max-width: 850px) {
     #game-container {
@@ -317,26 +319,29 @@ body {
 
     .btn-label {
         font-size: 12px;
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
     }
 
     .small-label {
         font-size: 10px;
     }
 
-    /* 📌 모바일 원희 이름 (left: 23%) */
+    /* 📌 모바일 원희 이름: 왼쪽으로 1 이동 (left: 22%) 및 그림자 연하게 */
     #speaker-name {
         font-size: 13px; 
         top: 22%;
-        left: 23%;
+        left: 22%;
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
     }
 
-    /* 📌 모바일 대사 본문 폰트 크기 8px로 축소 */
+    /* 📌 모바일 대사 본문: 폰트 크기 9px, 그림자 연하게 */
     #dialogue-text {
-        font-size: 8px; 
+        font-size: 9px; 
         line-height: 1.35;
         top: 50%;
         left: 10%;
         width: 80%;
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
     }
 
     #choice-box {
@@ -354,6 +359,7 @@ body {
 
     .stage-title-text {
         font-size: 13px; 
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
     }
 
     .ingredient-list {
@@ -364,10 +370,10 @@ body {
         width: 64px; 
     }
 
-    /* 📌 모바일 재료 이름 (left: 62%) */
     .ing-label {
         font-size: 11px; 
         left: 62%; 
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
     }
 
     #restart-btn img, #back-btn img {
