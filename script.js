@@ -12,6 +12,32 @@ const ingBtns = document.querySelectorAll('.ing-img-btn');
 const restartBtn = document.getElementById('restart-btn');
 const backBtn = document.getElementById('back-btn');
 
+// 📌 모바일 화면 전환 시 빈 배경(핑크색) 깜빡임 방지를 위한 이미지 사전 로드
+const preloadImages = [
+    'title-bg.jpg',
+    'play-bg.jpg',
+    'dialogue-bg.png',
+    'title-bg-box.png',
+    'bowl-empty.jpg',
+    'bowl-butter.jpg',
+    'bowl-sugar.jpg',
+    'bowl-salt.jpg',
+    'bowl-egg.jpg',
+    'bowl-flour.jpg',
+    'empty-desk.png',
+    'roll-dough.png',
+    'cookie-cut.png',
+    'oven-in.png',
+    'oven-bake.png',
+    'package-end.png',
+    'embarrassed-bg.jpg'
+];
+
+preloadImages.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+});
+
 // 📜 1. 기본 인트로 대사 목록
 const introDialogue = [
     { name: "원희", text: "이제 베이킹을 시작해 볼까? 어떤 걸 만들지 고민인데..." },
@@ -68,12 +94,12 @@ const bakingScenes = [
             "이제 다 구워진 쿠키를 꺼내서 예쁘게 포장해 볼까?"
         ]
     },
-    // [5] 최종 포장 엔딩 컷
+    // [5] 최종 포장 엔딩 컷 (대사 수정 완료)
     {
         bg: "url('package-end.png')",
         lines: [
             "짜잔~ 리본까지 묶어서 예쁘게 포장 완료!",
-            "오늘 쿠키 만드는 거 도와줘서 정말 고마워! 같이 먹으니까 더 맛있겠다!"
+            "오늘 쿠키 만드는 거 도와줘서 정말 고마워! 다음에도 나랑 맛있는 쿠키 만들러 와줄 거지?"
         ]
     }
 ];
@@ -144,7 +170,7 @@ dialogueBox.addEventListener('click', () => {
         return;
     }
 
-    // 👇 [4. 반죽 완성 직후(bowl-flour.jpg) 상태에서 클릭 시 작업대 컷씬으로 진입!]
+    // 👇 반죽 완성 직후(bowl-flour.jpg) 상태에서 클릭 시 작업대 컷씬으로 진입!
     if (gameState === 'dough_complete') {
         gameState = 'baking_process';
         sceneIndex = 0;
@@ -156,7 +182,7 @@ dialogueBox.addEventListener('click', () => {
         return;
     }
 
-    // 👇 [반죽 완성 후 공정 컷씬 단계]
+    // 👇 반죽 완성 후 공정 컷씬 단계
     if (gameState === 'baking_process') {
         sceneLineIndex++;
 
@@ -183,7 +209,7 @@ dialogueBox.addEventListener('click', () => {
         return;
     }
 
-    // 👇 [일반 인트로 & '아니요' 루트 대사 진행]
+    // 👇 일반 인트로 & '아니요' 루트 대사 진행
     currentDialogueIndex++;
     if (currentDialogueIndex < currentList.length) {
         showDialogue(currentDialogueIndex);
@@ -192,7 +218,7 @@ dialogueBox.addEventListener('click', () => {
             speakerName.textContent = "";
             dialogueText.textContent = "";
             dialogueBox.classList.add('hidden');
-            playBg.classList.add('blurred'); // 2. 배경 블러 처리
+            playBg.classList.add('blurred'); // 배경 블러 처리
             choiceBox.classList.remove('hidden');
             gameState = 'choice';
         } else if (gameState === 'no_route') {
@@ -313,12 +339,10 @@ ingBtns.forEach(btn => {
             if (clickedIng === 'flour') {
                 ingredientStage.classList.add('hidden');
                 
-                // 👇 4. 작업대로 넘어가기 전, bowl-flour.jpg 상태에서 반죽 완성 대사 출력!
                 playBg.style.backgroundImage = "url('bowl-flour.jpg')"; 
                 speakerName.textContent = "원희";
                 showFullDialogue("와아! 드디어 뽀얗고 완벽한 쿠키 반죽이 완성됐어!");
                 
-                // 다음 대화창 클릭 시 작업대(baking_process)로 넘어가도록 상태 설정
                 gameState = 'dough_complete';
             } else { wrongOrderAlert(); }
         }
