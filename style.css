@@ -319,29 +319,29 @@ body {
 
     .btn-label {
         font-size: 12px;
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
     .small-label {
         font-size: 10px;
     }
 
-    /* 📌 모바일 원희 이름: 왼쪽으로 1 이동 (left: 22%) 및 그림자 연하게 */
+    /* 📌 모바일 원희 이름표: 왼쪽으로 2칸 이동 (left: 20%) */
     #speaker-name {
         font-size: 13px; 
         top: 22%;
-        left: 22%;
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+        left: 20%;
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
-    /* 📌 모바일 대사 본문: 폰트 크기 9px, 그림자 연하게 */
+    /* 📌 모바일 대사 본문: 폰트 크기 10px로 키우고, 그림자 거의 없는 수준으로 연하게 조정 */
     #dialogue-text {
-        font-size: 9px; 
+        font-size: 10px; 
         line-height: 1.35;
         top: 50%;
         left: 10%;
         width: 80%;
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
     }
 
     #choice-box {
@@ -359,7 +359,7 @@ body {
 
     .stage-title-text {
         font-size: 13px; 
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
     .ingredient-list {
@@ -373,7 +373,7 @@ body {
     .ing-label {
         font-size: 11px; 
         left: 62%; 
-        text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
     #restart-btn img, #back-btn img {
