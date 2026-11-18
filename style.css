@@ -28,7 +28,6 @@ body {
     border-radius: 0;    
     box-shadow: none;    
     overflow: hidden;
-    /* 📌 4. 화면 전환 시 하얗게 깜빡이는 현상 방지를 위해 부드러운 베이스톤으로 변경 */
     background-color: #ffeef2;
 }
 
@@ -324,16 +323,16 @@ body {
         font-size: 10px;
     }
 
-    /* 📌 1. 모바일 원희 이름 오른쪽으로 이동 (left: 20%) */
+    /* 📌 모바일 원희 이름 (left: 23%) */
     #speaker-name {
         font-size: 13px; 
         top: 22%;
-        left: 20%;
+        left: 23%;
     }
 
-    /* 📌 2. 모바일 대사창 글씨 2만큼 줄임 (12px ➡️ 10px) */
+    /* 📌 모바일 대사 본문 폰트 크기 8px로 축소 */
     #dialogue-text {
-        font-size: 10px; 
+        font-size: 8px; 
         line-height: 1.35;
         top: 50%;
         left: 10%;
@@ -365,13 +364,26 @@ body {
         width: 64px; 
     }
 
-    /* 📌 3. 모바일 재료 이름 오른쪽으로 이동 (left: 58%) */
+    /* 📌 모바일 재료 이름 (left: 62%) */
     .ing-label {
         font-size: 11px; 
-        left: 58%; 
+        left: 62%; 
     }
 
     #restart-btn img, #back-btn img {
         width: 120px;
     }
+}
+
+/* =========================================
+   📌 모바일 터치 하이라이트 및 흰색 깜빡임 완전 제거
+   ========================================= */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#game-container, .screen, #play-bg {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
 }
