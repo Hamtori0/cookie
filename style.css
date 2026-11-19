@@ -47,6 +47,30 @@ body {
     display: none !important;
 }
 
+/* 🌐 우측 상단 고정 언어 전환 버튼 스타일 */
+.corner-lang-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
+    border: 2px solid #ffb6c1;
+    border-radius: 15px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-family: 'DialogueFont', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #744a4a;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.corner-lang-btn:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
 #title-screen {
     background-image: url('title-bg.jpg'); 
     background-size: cover;
@@ -150,7 +174,7 @@ body {
     opacity: 0.85; 
 }
 
-/* 📌 PC 버전 이름표 (기존 유지) */
+/* 📌 한국어 기준 기본 이름표 */
 #speaker-name {
     position: absolute;
     top: 24%;     
@@ -162,7 +186,7 @@ body {
     font-family: 'DialogueFont', sans-serif;
 }
 
-/* 📌 PC 버전 대사 본문 (기존 유지) */
+/* 📌 한국어 기준 기본 대사 본문 */
 #dialogue-text {
     position: absolute;
     top: 52%;     
@@ -298,6 +322,29 @@ body {
 }
 
 /* =========================================
+   🌐 [영어 모드 전용] PC 화면에서 영어일 때만 적용되는 스타일
+   ========================================= */
+#game-container.lang-en #dialogue-text {
+    font-size: 20px; 
+    top: 49%;
+    left: 10%;
+    line-height: 1.4;
+}
+
+#game-container.lang-en #speaker-name {
+    font-size: 20px;
+    top: 24%;
+    left: 18%;
+}
+
+#game-container.lang-en .ing-label {
+    font-size: 15px;
+    top: 50%;
+    left: 60%;
+}
+
+
+/* =========================================
    📱 [모바일] 850px 이하 화면 전용 세팅
    ========================================= */
 @media screen and (max-width: 850px) {
@@ -306,6 +353,14 @@ body {
         height: 288px; 
         border: none;    
         border-radius: 0;
+    }
+
+    .corner-lang-btn {
+        top: 8px;
+        right: 8px;
+        padding: 3px 8px;
+        font-size: 10px;
+        border-width: 1px;
     }
 
     #title-logo {
@@ -326,7 +381,6 @@ body {
         font-size: 10px;
     }
 
-    /* 📌 모바일 원희 이름표: 왼쪽으로 2칸 이동 (left: 20%) */
     #speaker-name {
         font-size: 13px; 
         top: 22%;
@@ -334,7 +388,6 @@ body {
         text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     }
 
-    /* 📌 모바일 대사 본문: 폰트 크기 10px로 키우고, 그림자 거의 없는 수준으로 연하게 조정 */
     #dialogue-text {
         font-size: 11px; 
         line-height: 1.35;
@@ -379,10 +432,27 @@ body {
     #restart-btn img, #back-btn img {
         width: 120px;
     }
+
+    /* 🌐 [영어 모드 전용] 모바일에서 영어일 때만 적용되는 미세조정 */
+    #game-container.lang-en #dialogue-text {
+        font-size: 9.5px; 
+        top: 49%;
+        left: 10%;
+    }
+    #game-container.lang-en #speaker-name {
+        font-size: 11px;
+        top: 24%;
+        left: 16%;
+    }
+    #game-container.lang-en .ing-label {
+        font-size: 9.5px;
+        top: 50%;
+        left: 62%;
+    }
 }
 
 /* =========================================
-   📌 모바일 터치 하이라이트 및 흰색 깜빡임 완전 제거
+   📱 모바일 터치 하이라이트 및 흰색 깜빡임 완전 제거
    ========================================= */
 * {
     -webkit-tap-highlight-color: transparent;
